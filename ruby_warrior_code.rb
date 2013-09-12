@@ -6,7 +6,7 @@ class Player
   end
 
   def play_turn(warrior)
-    if !warrior.feel.empty?
+    if warrior.feel.enemy?
       warrior.attack!
     elsif !taking_damage?(warrior.health) && warrior.health < START_HEALING_AT_HEALTH_LEVEL
       warrior.rest!
